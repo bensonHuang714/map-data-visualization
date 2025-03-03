@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雙北地圖導航</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        /* 左側導航欄的樣式 */
+        nav {
+            width: 200px;
+            background-color: #007bff;
+            padding: 20px;
+            box-sizing: border-box;
+            color: white;
+        }
+
+        nav h1 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        nav a {
+            display: block;
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: white;
+            color: #007bff;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        nav a:hover {
+            background-color: #0056b3;
+            color: white;
+        }
+
+        /* 右側iframe顯示地圖 */
+        iframe {
+            flex: 1;
+            border: none;
+            height: 100vh;
+            width: calc(100% - 200px);
+            /* 減去左側導航欄的寬度 */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 左側導航欄 -->
+    <nav>
+        <h1>雙北地圖導航</h1>
+        <!-- 修改target，設置為 iframe 的名字 "map-frame" -->
+        <a href="雙北公園地圖.html" target="map-frame">查看公園</a>
+        <a href="雙北捷運站地圖.html" target="map-frame">查看捷運站</a>
+        <a href="雙北嫌惡設施地圖.html" target="map-frame">查看嫌惡設施</a>
+        <a href="雙北學校地圖.html" target="map-frame">查看學校</a>
+        <!-- 可以添加更多地圖連結 -->
+    </nav>
+
+    <!-- 右側顯示地圖的 iframe，name 要對應連結中的 target -->
+    <iframe name="map-frame" src="雙北公園地圖.html"></iframe>
+</body>
+
+</html>
